@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Persistencia_Jorge_Caro</string>
+
+    <string name="cuenta">Mi cuenta</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="recordarme">Recordarme</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+    <string name="bienvenidos">Bienvenidos a Parking Control</string>
+    <string name="iniciar_sesion_tv">Iniciar sesion para empezar</string>
+    <string name="nombre_usuario">Nombre del usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="configuraciones">Configuraciones</string>
+    <string name="descripcioon_usuario">El nombre con el que te identificas en la aplicacion</string>
+    <string name="descripcioon_password">Clave que te permite iniciar sesion en la aplicacion</string>
+    <string name="notificaciones">Notificaciones por correo electronico</string>
+    <string name="descripcioon_notificaciones">Recibe notificaciones de la aplicacion, noticias y eventos relevantes en tu cuenta de correo</string>
+    <string name="parking_control">Parking control</string>
+    <string name="parqueos">Parqueos</string>
+    <string name="error_usuario">Debe ingresar un nombre de usuario</string>
+    <string name="error_password">Debe ingresar una contraseña para el usuario</string>
+</resources>
