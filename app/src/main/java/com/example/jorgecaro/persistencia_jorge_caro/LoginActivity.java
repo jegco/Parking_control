@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     Button iniciar_sesion;
     SharedPreferences.Editor editor;
     SharedPreferences sharedPreferencesCompat;
+    CheckBox recordarme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         nombre = (TextInputLayout) findViewById(R.id.til_nombre_usuario);
         pass = (TextInputLayout) findViewById(R.id.til_password);
         iniciar_sesion = (Button) findViewById(R.id.button_iniciar_sesion);
+        recordarme = (CheckBox) findViewById(R.id.recordarme);
         sharedPreferencesCompat = getSharedPreferences(Constantes_de_preferencia.PREFERENCIA_1, MODE_PRIVATE);
         editor = sharedPreferencesCompat.edit();
 
@@ -41,14 +44,18 @@ public class LoginActivity extends AppCompatActivity {
                 editText_nombre = nombre.getEditText();
                 editText_pass = pass.getEditText();
                 if(!editText_nombre.getText().toString().equals("")&&!editText_pass.getText().toString().equals("")) {
-                    editor.putString("usuario", editText_nombre.getText().toString());
-                    editor.putString("pass", editText_pass.getText().toString());
-                    editor.apply();
+                    if(recordarme.isChecked()) {
+                        editor.putString("usuario", editText_nombre.getText().toString());
+                        editor.putString("pass", editText_pass.getText().toString());
+                        editor.apply();
+                    }
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(i);
                 }else if(editText_nombre.getText().toString().equals("")){
+                    pass.setError("");
                     nombre.setError(getResources().getString(R.string.error_usuario));
                 }else if(editText_pass.getText().toString().equals("")){
+                    nombre.setError("");
                     pass.setError(getResources().getString(R.string.error_password));
                 }
             }

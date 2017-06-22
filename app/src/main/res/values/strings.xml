@@ -23,4 +23,7 @@
     <string name="parqueos">Parqueos</string>
     <string name="error_usuario">Debe ingresar un nombre de usuario</string>
     <string name="error_password">Debe ingresar una contraseña para el usuario</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
