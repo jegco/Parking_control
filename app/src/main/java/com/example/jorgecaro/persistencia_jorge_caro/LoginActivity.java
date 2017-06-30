@@ -62,4 +62,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!sharedPreferencesCompat.getString(Constantes_de_preferencia.USUARIO,"n/a").equals("n/a")&&!sharedPreferencesCompat.getString(Constantes_de_preferencia.PASS,"n/a").equals("n/a")){
+            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(i);
+        }
+    }
 }

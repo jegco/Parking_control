@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.jorgecaro.persistencia_jorge_caro.fragments.ParqueosFragment">
+    <GridView
+        android:id="@+id/grid_notas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        android:horizontalSpacing="5dp"
+        android:stretchMode="columnWidth"/>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
@@ -34,5 +42,4 @@
         android:layout_margin="@dimen/fab_margin"
         app:srcCompat="@drawable/ic_add_circle"
         />
-
 </FrameLayout>
