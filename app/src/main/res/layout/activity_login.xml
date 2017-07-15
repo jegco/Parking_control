@@ -80,4 +80,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="34dp" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/carro"
+        android:layout_above="@+id/til_nombre_usuario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
 </RelativeLayout>

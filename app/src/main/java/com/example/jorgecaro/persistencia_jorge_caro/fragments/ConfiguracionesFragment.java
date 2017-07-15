@@ -27,6 +27,7 @@ public class ConfiguracionesFragment extends PreferenceFragment implements
         // Set up a listener whenever a key changes
         getPreferenceScreen().getSharedPreferences()
                 .registerOnSharedPreferenceChangeListener(this);
+
     }
 
     @Override
@@ -40,7 +41,7 @@ public class ConfiguracionesFragment extends PreferenceFragment implements
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String s) {
         TextView txtUsuario = (TextView)getActivity().findViewById(R.id.usuario);
         TextView txtEmail = (TextView)getActivity().findViewById(R.id.email);
-        txtUsuario.setText(sharedPreferences.getString("usuario","n/a"));
-        txtEmail.setText(sharedPreferences.getString("usuario","n/a")+"@nextu.com");
+        txtUsuario.setText(sharedPreferences.getString(Constantes_de_preferencia.USUARIO,"n/a"));
+        txtEmail.setText(sharedPreferences.getString(Constantes_de_preferencia.USUARIO,"n/a")+"@nextu.com");
     }
 }

@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity
     private Parqueadero parqueadero = new Parqueadero(new ArrayList<Parqueo>());
     private int escribir, leer, REQUEST_CODE = 1;
     boolean op = false;
+    TextView nav_drawer_usuario, nav_drawer_email;
+
     private String[] permisos = {
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.READ_EXTERNAL_STORAGE
@@ -65,13 +67,20 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         header = navigationView.getHeaderView(0);
-        TextView nav_drawer_usuario = (TextView) header.findViewById(R.id.usuario);
-        TextView nav_drawer_email = (TextView) header.findViewById(R.id.email);
+        nav_drawer_usuario = (TextView) header.findViewById(R.id.usuario);
+        nav_drawer_email = (TextView) header.findViewById(R.id.email);
         sharedPreferencesCompat = getSharedPreferences(Constantes_de_preferencia.PREFERENCIA_1, MODE_PRIVATE);
         nav_drawer_usuario.setText(sharedPreferencesCompat.getString(Constantes_de_preferencia.USUARIO,"n/a"));
         nav_drawer_email.setText(sharedPreferencesCompat.getString(Constantes_de_preferencia.USUARIO,"n/a")+"@example.com");
 
         getFragmentManager().beginTransaction().replace(R.id.content, new ParqueosFragment()).addToBackStack(null).commit();
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
 
     }
 
@@ -105,6 +114,7 @@ public class MainActivity extends AppCompatActivity
             File f0 = new File(dir, Constantes_de_preferencia.PREFERENCIA_1);
             f0.delete();
             clearSharedPreferences(getBaseContext());
+            finish();
             finish();
             return true;
         }

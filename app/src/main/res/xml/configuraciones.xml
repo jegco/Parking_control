@@ -3,12 +3,12 @@
 
     <PreferenceCategory android:title="@string/configuraciones">
         <EditTextPreference
-            android:key="@string/nombre_usuario"
+            android:key="@string/usuario"
             android:title="@string/nombre_usuario"
             android:summary="@string/descripcioon_usuario"/>
 
         <EditTextPreference
-            android:key="@string/password"
+            android:key="@string/pass"
             android:title="@string/password"
             android:summary="@string/descripcioon_password"/>
         <SwitchPreference

@@ -77,7 +77,7 @@ public class ParqueosFragment extends Fragment {
         recyclerViewAdapter = new RecyclerViewAdapter(getContext(), ((MainActivity)getActivity()).getParqueadero());
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         recyclerView.setAdapter(recyclerViewAdapter);
-        recyclerView.setHasFixedSize(true);
+        recyclerView.setHasFixedSize(false);
         GridLayoutManager gridLayout = new GridLayoutManager(getContext(), 2);
         recyclerView.setLayoutManager(gridLayout);
     }
